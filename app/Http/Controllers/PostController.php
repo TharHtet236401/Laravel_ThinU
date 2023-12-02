@@ -25,7 +25,7 @@ class PostController extends Controller
         ], 200);
     }
 
-    //get the liked posts by auth user
+    //get the saveds posts by auth user
     
     public function likedPosts()
 {
@@ -42,13 +42,7 @@ class PostController extends Controller
             return $save->where('user_id', auth()->user()->id)
                 ->select('id', 'user_id', 'post_id','created_at')->get();
         })
-
-      
-        
         ->get();
-
-        
-
     return response(['liked_posts' => $likedPosts], 200);
 }
 

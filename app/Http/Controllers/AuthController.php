@@ -73,7 +73,7 @@ class AuthController extends Controller
         ], 200);
     }
 
-    // update user
+    // update user version 1 
     public function update(Request $request)
     {
         $attrs = $request->validate([
@@ -92,5 +92,100 @@ class AuthController extends Controller
             'user' => auth()->user()
         ], 200);
     }
+
+
+    // version 2 
+//     public function update(Request $request)
+// {
+//     $attrs = $request->validate([
+//         'name' => 'required|string'
+//     ]);
+
+//     $user = auth()->user();
+
+//     if ($request->hasFile('image')) {
+//         // If an image is provided, save it and update the 'image' field
+//         $image = $this->saveImage($request->file('image'), 'profiles');
+//         $user->update(['image' => $image]);
+//     }
+
+//     $user->update(['name' => $attrs['name']]);
+
+//     return response([
+//         'message' => 'User updated.',
+//         'user' => $user
+//     ], 200);
+// }
+
+// version 3 
+// public function update(Request $request)
+// {
+//     $attrs = $request->validate([
+//         'name' => 'required|string'
+//     ]);
+
+//     $user = auth()->user();
+
+//     if ($request->hasFile('image')) {
+//         // Scenario 1: If an image is provided, save it and update the 'image' field
+//         $image = $this->saveImage($request->file('image'), 'profiles');
+//         $user->update(['image' => $image]);
+//     }
+
+//     // Scenario 2: Update the 'name' field
+//     $user->update(['name' => $attrs['name']]);
+
+//     return response([
+//         'message' => 'User updated.',
+//         'user' => $user
+//     ], 200);
+// }
+
+//version 4
+// public function update(Request $request)
+// {
+//     $attrs = $request->validate([
+//         'name' => 'required|string'
+//     ]);
+
+//     $user = auth()->user();
+
+//     if ($request->hasFile('image')) {
+//         // Scenario 1: If an image is provided, save it and update the 'image' field
+//         $image = $this->saveImage($request->file('image'), 'profiles');
+//         $user->update(['image' => $image]);
+//     }
+
+//     // Scenario 2: Update the 'name' field
+//     $user->update(['name' => $attrs['name']]);
+
+//     return response([
+//         'message' => 'User updated.',
+//         'user' => $user
+//     ], 200);
+// }
+
+// public function update(Request $request)
+// {
+//     $attrs = $request->validate([
+//         'name' => 'required|string'
+//     ]);
+
+//     $user = auth()->user();
+
+//     if ($request->hasFile('image')) {
+//         // Scenario 1: If a new image is provided, save it and update the 'image' field
+//         $image = $this->saveImage($request->file('image'), 'profiles');
+//         $user->update(['image' => $image]);
+//     }
+
+//     // Scenario 2: Update the 'name' field
+//     $user->update(['name' => $attrs['name']]);
+
+//     return response([
+//         'message' => 'User updated.',
+//         'user' => $user
+//     ], 200);
+// }
 
 }
